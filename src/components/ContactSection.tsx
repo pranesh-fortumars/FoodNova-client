@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import {
   Phone, Mail, MapPin, MessageCircle, Loader2, CheckCircle2, AlertCircle,
-  Send, User, Building2,
+  Send, User, Building2, Copy, Check,
 } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { BUSINESS } from '@/data/content';
@@ -79,6 +79,15 @@ export function ContactSection() {
   const [form, setForm] = useState<FormState>(INITIAL);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<Status>('idle');
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+
+  const handleCopy = (text: string, key: string) => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+      setCopiedKey(key);
+      setTimeout(() => setCopiedKey(null), 2000);
+    }
+  };
 
   const validate = (): boolean => {
     const e: FormErrors = {};
@@ -171,25 +180,55 @@ export function ContactSection() {
                 <p className="text-sm text-mint-400 font-medium mt-0.5">{BUSINESS.founder}</p>
               </div>
 
-              <a href={BUSINESS.phoneLink} className="flex items-center gap-3 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 group-hover:bg-mint-400/20 transition-colors">
-                  <Phone className="h-5 w-5 text-mint-400" />
-                </div>
-                <div>
-                  <p className="text-xs text-white/50">Phone</p>
-                  <p className="text-sm text-white font-medium">{BUSINESS.phone}</p>
-                </div>
-              </a>
+              <div className="flex items-center justify-between group">
+                <a href={BUSINESS.phoneLink} className="flex items-center gap-3 min-w-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 group-hover:bg-mint-400/20 transition-colors">
+                    <Phone className="h-5 w-5 text-mint-400" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/50">Phone</p>
+                    <p className="text-sm text-white font-medium">{BUSINESS.phone}</p>
+                  </div>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => handleCopy(BUSINESS.phone, 'phone')}
+                  title="Copy phone number"
+                  className="p-2 rounded-lg text-white/40 hover:text-mint-400 hover:bg-white/10 transition-colors"
+                  aria-label="Copy phone number"
+                >
+                  {copiedKey === 'phone' ? (
+                    <Check className="h-4 w-4 text-mint-400" />
+                  ) : (
+                    <Copy className="h-4 w-4" />
+                  )}
+                </button>
+              </div>
 
-              <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-3 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 group-hover:bg-mint-400/20 transition-colors">
-                  <Mail className="h-5 w-5 text-mint-400" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs text-white/50">Email</p>
-                  <p className="text-sm text-white font-medium truncate">{BUSINESS.email}</p>
-                </div>
-              </a>
+              <div className="flex items-center justify-between group">
+                <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-3 min-w-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 group-hover:bg-mint-400/20 transition-colors">
+                    <Mail className="h-5 w-5 text-mint-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-white/50">Email</p>
+                    <p className="text-sm text-white font-medium truncate">{BUSINESS.email}</p>
+                  </div>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => handleCopy(BUSINESS.email, 'email')}
+                  title="Copy email address"
+                  className="p-2 rounded-lg text-white/40 hover:text-mint-400 hover:bg-white/10 transition-colors"
+                  aria-label="Copy email address"
+                >
+                  {copiedKey === 'email' ? (
+                    <Check className="h-4 w-4 text-mint-400" />
+                  ) : (
+                    <Copy className="h-4 w-4" />
+                  )}
+                </button>
+              </div>
 
               <a href={BUSINESS.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 group-hover:bg-mint-400/20 transition-colors">

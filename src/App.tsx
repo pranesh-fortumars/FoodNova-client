@@ -17,6 +17,7 @@ import { ContactSection } from '@/components/ContactSection';
 import { PrivacyPolicySection } from '@/components/PrivacyPolicySection';
 import { Footer } from '@/components/Footer';
 import { WhatsAppFloatingButton } from '@/components/WhatsAppFloatingButton';
+import { ScrollToTopButton } from '@/components/ScrollToTopButton';
 import { NotFoundPage } from '@/components/NotFoundPage';
 import { useSmoothAnchorLinks } from '@/lib/scroll';
 
@@ -83,6 +84,7 @@ function App() {
         )}
       </main>
       <Footer />
+      <ScrollToTopButton />
       <WhatsAppFloatingButton />
     </div>
   );

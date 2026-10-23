@@ -20,12 +20,13 @@ export function FounderSection() {
           {/* Image */}
           <Reveal className="lg:col-span-5">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-xl">
+              <div className="rounded-2xl overflow-hidden shadow-xl bg-sage">
                 <img
                   src={IMAGES.founderPlaceholder}
                   alt="Portrait placeholder for Joshika Mahendran, Food Technologist and Founder"
                   className="w-full h-[420px] lg:h-[520px] object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-4">

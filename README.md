@@ -5,8 +5,8 @@ Website for **FoodNova Consulting**, a food product development and R&D consulta
 ---
 
 ## 🌐 Live Deployment
-- **Live Vercel URL:** [https://prompt-pavo-srh7ghq.tmp.now](https://prompt-pavo-srh7ghq.tmp.now)
-- **Claim Deployment URL (to bind to your Vercel account):** [https://vercel.com/claim-deployment?code=ddc441d5-2c4e-48f1-9ba9-6044b2313d4c](https://vercel.com/claim-deployment?code=ddc441d5-2c4e-48f1-9ba9-6044b2313d4c)
+- **Live Vercel URL:** [https://nimble-apogee-j0pv9qm.tmp.now](https://nimble-apogee-j0pv9qm.tmp.now)
+- **Claim Deployment URL (to bind to your Vercel account):** [https://vercel.com/claim-deployment?code=84d30724-a282-4c13-88c2-474e9ab4da40](https://vercel.com/claim-deployment?code=84d30724-a282-4c13-88c2-474e9ab4da40)
 
 ---
 

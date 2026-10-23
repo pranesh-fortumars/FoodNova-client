@@ -58,12 +58,13 @@ export function AboutSection() {
           {/* Image */}
           <Reveal className="lg:col-span-5" delay={100}>
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-xl">
+              <div className="rounded-2xl overflow-hidden shadow-xl bg-sage">
                 <img
                   src={IMAGES.labPipette}
                   alt="Scientist holding a beaker with orange liquid in a laboratory setting"
                   className="w-full h-[380px] lg:h-[480px] object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -top-4 -left-4 bg-white rounded-xl shadow-lg border border-navy/5 p-4 hidden sm:block">

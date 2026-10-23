@@ -19,6 +19,18 @@ export function Header() {
   const scrolled = useScrollPosition();
   const [mobileOpen, setMobileOpen] = useState(false);
   const active = useActiveSection(NAV_LINKS.map((l) => l.id));
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleProgress = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        setScrollProgress(Math.min(100, Math.max(0, (window.scrollY / totalHeight) * 100)));
+      }
+    };
+    window.addEventListener('scroll', handleProgress, { passive: true });
+    return () => window.removeEventListener('scroll', handleProgress);
+  }, []);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -94,6 +106,14 @@ export function Header() {
               <Menu className="h-6 w-6" />
             </button>
           </div>
+        </div>
+
+        {/* Reading progress bar */}
+        <div className="w-full h-0.5 bg-transparent overflow-hidden">
+          <div
+            className="h-full bg-mint-400 transition-all duration-150 ease-out"
+            style={{ width: `${scrollProgress}%` }}
+          />
         </div>
       </header>
 

@@ -32,6 +32,14 @@ export function ProjectPortfolio() {
   const [filter, setFilter] = useState<string>('All');
   const [selected, setSelected] = useState<Project | null>(null);
 
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { All: PROJECTS.length };
+    PROJECTS.forEach((p) => {
+      counts[p.category] = (counts[p.category] || 0) + 1;
+    });
+    return counts;
+  }, []);
+
   const filtered = useMemo(() => {
     if (filter === 'All') return PROJECTS;
     return PROJECTS.filter((p) => p.category === filter);
@@ -56,13 +64,18 @@ export function ProjectPortfolio() {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all ${
                 filter === cat
-                  ? 'bg-navy text-white'
-                  : 'bg-white text-navy/60 border border-navy/10 hover:border-navy/20 hover:text-navy'
+                  ? 'bg-navy text-white shadow-sm'
+                  : 'bg-white text-navy/70 border border-navy/10 hover:border-navy/20 hover:text-navy'
               }`}
             >
-              {cat}
+              <span>{cat}</span>
+              <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${
+                filter === cat ? 'bg-white/20 text-white' : 'bg-navy/5 text-navy/60'
+              }`}>
+                {categoryCounts[cat] || 0}
+              </span>
             </button>
           ))}
         </Reveal>
@@ -75,12 +88,13 @@ export function ProjectPortfolio() {
                 onClick={() => setSelected(project as Project)}
                 className="group block w-full text-left rounded-2xl overflow-hidden bg-white border border-navy/8 hover:border-mint-200 hover:shadow-xl transition-all"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-56 overflow-hidden bg-sage">
                   <img
                     src={PROJECT_IMAGES[project.image]}
                     alt={project.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
                   <div className="absolute top-3 left-3">
