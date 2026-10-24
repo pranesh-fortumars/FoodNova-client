@@ -73,7 +73,7 @@ export function PrivacyPolicySection() {
               <div>
                 <h2 className="font-display text-base font-semibold text-navy mb-2">7. Contact</h2>
                 <p>
-                  For privacy-related questions, please contact FoodNova Consulting at joshikamahendran@gmail.com or +91 9345417620.
+                  For privacy-related questions, please contact FoodNova Consulting at foodnova.consulting@gmail.com or +91 9345417620.
                 </p>
               </div>
 

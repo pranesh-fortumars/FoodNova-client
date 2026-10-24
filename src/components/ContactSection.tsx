@@ -10,12 +10,9 @@ const SERVICE_OPTIONS = [
   'Food Product Development',
   'Research & Development Consulting',
   'Product Reformulation',
-  'Cost Optimization',
   'Process Improvement & Standardization',
-  'Sensory Evaluation & Product Refinement',
   'Food Safety & Quality Advisory',
-  'Labelling, Packaging & Compliance Guidance',
-  'Product Documentation & Handover',
+  'Labelling Regulation & Compliance',
   'Organic Certification Guidance',
   'Not sure yet',
 ];

@@ -21,7 +21,8 @@ interface Project {
   id: string;
   title: string;
   category: string;
-  status: 'completed' | 'in-development';
+  status: 'completed' | 'waiting-production' | 'yet-to-launch';
+  statusLabel?: string;
   challenge: string;
   approach: string;
   outcome: string;
@@ -101,12 +102,16 @@ export function ProjectPortfolio() {
                     <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${
                       project.status === 'completed'
                         ? 'bg-mint-400 text-navy'
-                        : 'bg-amber-400 text-navy'
+                        : project.status === 'waiting-production'
+                        ? 'bg-amber-300 text-navy'
+                        : 'bg-slate-200 text-navy'
                     }`}>
                       {project.status === 'completed' ? (
                         <><CheckCircle2 className="h-3 w-3" /> Completed</>
+                      ) : project.status === 'waiting-production' ? (
+                        <><Clock className="h-3 w-3" /> Waiting for production</>
                       ) : (
-                        <><Clock className="h-3 w-3" /> In Development</>
+                        <><Clock className="h-3 w-3" /> Yet to launch</>
                       )}
                     </span>
                   </div>
@@ -177,12 +182,18 @@ export function ProjectPortfolio() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />
               <div className="absolute bottom-4 left-5 right-5">
                 <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold mb-2 ${
-                  selected.status === 'completed' ? 'bg-mint-400 text-navy' : 'bg-amber-400 text-navy'
+                  selected.status === 'completed'
+                    ? 'bg-mint-400 text-navy'
+                    : selected.status === 'waiting-production'
+                    ? 'bg-amber-300 text-navy'
+                    : 'bg-slate-200 text-navy'
                 }`}>
                   {selected.status === 'completed' ? (
                     <><CheckCircle2 className="h-3 w-3" /> Completed</>
+                  ) : selected.status === 'waiting-production' ? (
+                    <><Clock className="h-3 w-3" /> Waiting for production</>
                   ) : (
-                    <><Clock className="h-3 w-3" /> In Development</>
+                    <><Clock className="h-3 w-3" /> Yet to launch</>
                   )}
                 </span>
                 <h3 className="font-display text-xl lg:text-2xl font-bold text-white">{selected.title}</h3>
@@ -202,7 +213,7 @@ export function ProjectPortfolio() {
                 <h4 className="font-display text-sm font-semibold text-mint-600 uppercase tracking-wide mb-2">
                   {selected.status === 'completed' ? 'Reported Outcome' : 'Current Status'}
                 </h4>
-                <p className="text-sm text-slate leading-relaxed">{selected.outcome}</p>
+                <p className="text-sm text-slate leading-relaxed font-medium">{selected.outcome}</p>
               </div>
 
               <div className="pt-4 border-t border-navy/10 flex flex-col sm:flex-row gap-3">

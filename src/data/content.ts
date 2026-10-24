@@ -1,10 +1,11 @@
 export const BUSINESS = {
   name: 'FoodNova Consulting',
-  founder: 'Joshika Mahendran',
+  founder: 'Joshika M',
+  title: 'Founder & Food Technologist',
   phone: '+91 9345417620',
   phoneLink: 'tel:+919345417620',
   whatsapp: 'https://wa.me/919345417620',
-  email: 'joshikamahendran@gmail.com',
+  email: 'foodnova.consulting@gmail.com',
   altEmail: 'foodnovaconsulting@gmail.com',
   address: {
     line1: '66 E 6/1A, KTKJ Aishwaryam Industrial Building',
@@ -19,10 +20,12 @@ export const BUSINESS = {
 };
 
 export const IMAGES = {
-  heroLab: 'https://images.pexels.com/photos/5682668/pexels-photo-5682668.jpeg?auto=compress&cs=tinysrgb&w=900',
-  heroLabAlt: 'https://images.pexels.com/photos/5682661/pexels-photo-5682661.jpeg?auto=compress&cs=tinysrgb&w=900',
+  // Scientific Food R&D Laboratory setup with glassware, beakers, pipettes, and formulation samples
+  heroLab: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  heroLabAlt: 'https://images.pexels.com/photos/8531346/pexels-photo-8531346.jpeg?auto=compress&cs=tinysrgb&w=900',
   heroBeverage: 'https://images.pexels.com/photos/8679349/pexels-photo-8679349.jpeg?auto=compress&cs=tinysrgb&w=600',
   heroBeverage2: 'https://images.pexels.com/photos/6209881/pexels-photo-6209881.jpeg?auto=compress&cs=tinysrgb&w=400',
+  aboutLab: 'https://images.pexels.com/photos/8531346/pexels-photo-8531346.jpeg?auto=compress&cs=tinysrgb&w=1000',
   labPipette: 'https://images.pexels.com/photos/15831828/pexels-photo-15831828.jpeg?auto=compress&cs=tinysrgb&w=900',
   labScientist: 'https://images.pexels.com/photos/8531346/pexels-photo-8531346.jpeg?auto=compress&cs=tinysrgb&w=900',
   labScientist2: 'https://images.pexels.com/photos/6608508/pexels-photo-6608508.jpeg?auto=compress&cs=tinysrgb&w=900',
@@ -89,20 +92,6 @@ export const SERVICES = [
     cta: 'Improve an Existing Product',
   },
   {
-    id: 'cost-optimization',
-    title: 'Cost Optimization',
-    short: 'Explore formulation and ingredient options that may improve cost efficiency while maintaining quality.',
-    icon: 'TrendingDown',
-    points: [
-      'Ingredient sourcing research',
-      'Cost-conscious formulation',
-      'Alternative ingredient evaluation',
-      'Recipe costing',
-      'Commercial costing documentation',
-    ],
-    cta: 'Explore Cost Optimization',
-  },
-  {
     id: 'process-improvement',
     title: 'Process Improvement & Standardization',
     short: 'Develop more consistent, clearly documented processing methods.',
@@ -115,19 +104,6 @@ export const SERVICES = [
       'Practical manufacturing guidance',
     ],
     cta: 'Improve My Process',
-  },
-  {
-    id: 'sensory-evaluation',
-    title: 'Sensory Evaluation & Product Refinement',
-    short: 'A feedback-led approach to refining taste, texture, appearance, and overall product acceptability.',
-    icon: 'Eye',
-    points: [
-      'Sample evaluation',
-      'Feedback collection',
-      'Iterative formulation changes',
-      'Final product refinement',
-    ],
-    cta: 'Refine My Product',
   },
   {
     id: 'food-safety-quality',
@@ -143,10 +119,10 @@ export const SERVICES = [
     cta: 'Discuss Quality Requirements',
   },
   {
-    id: 'labelling-packaging',
-    title: 'Labelling, Packaging & Compliance Guidance',
-    short: 'Advisory support for reviewing food product labels, packaging considerations, and relevant regulatory requirements.',
-    icon: 'Package',
+    id: 'labelling-compliance',
+    title: 'Labelling Regulation & Compliance',
+    short: 'Technical guidance on food labelling requirements, packaging information, and applicable regulatory considerations for food products.',
+    icon: 'FileCheck',
     points: [
       'Labelling and display requirements',
       'Ingredient declaration considerations',
@@ -155,19 +131,6 @@ export const SERVICES = [
       'Identification of specialist requirements',
     ],
     cta: 'Review My Packaging',
-  },
-  {
-    id: 'product-documentation',
-    title: 'Product Documentation & Handover',
-    short: 'Project handover can include the finalized formula, processing steps, and a commercial costing sheet.',
-    icon: 'FileText',
-    points: [
-      'Finalized product formula',
-      'Processing steps documentation',
-      'Commercial costing sheet',
-      'Additional deliverables per agreed scope',
-    ],
-    cta: 'Plan My Project',
   },
   {
     id: 'organic-certification',
@@ -204,14 +167,14 @@ export const AUDIENCES = [
   },
   {
     title: 'Growing Food Brands',
-    desc: 'Brands looking to refine products, improve consistency, and explore cost-conscious formulation options.',
-    service: 'Cost Optimization',
+    desc: 'Brands looking to refine products, improve consistency, and ensure regulatory labelling compliance.',
+    service: 'Labelling Regulation & Compliance',
     icon: 'TrendingUp',
   },
   {
     title: 'Bakeries, Cloud Kitchens & Food Service',
     desc: 'Businesses exploring new products, standardized recipes, or improvements to existing offerings.',
-    service: 'Process Improvement',
+    service: 'Process Improvement & Standardization',
     icon: 'ChefHat',
   },
 ] as const;
@@ -271,30 +234,33 @@ export const PROJECTS = [
     id: 'carbonated-beverage',
     title: 'Carbonated Beverage Innovation',
     category: 'Beverage Innovation',
-    status: 'in-development',
-    challenge: 'Develop a new-flavour carbonated beverage with a targeted shelf life of 6\u20139 months.',
+    status: 'waiting-production',
+    statusLabel: 'Waiting for production process',
+    challenge: 'Develop a new-flavour carbonated beverage with a targeted shelf life of 6–9 months.',
     approach: 'The desired flavour profile is being developed using natural sugars.',
-    outcome: 'This project remains in Phase 3. The targeted shelf life has not yet been confirmed as achieved.',
+    outcome: "Product development and R&D was achieved, it's waiting for production process.",
     image: 'carbonatedBeverage',
   },
   {
     id: 'freeze-dried-fruit',
     title: 'Freeze-Dried Fruit Snack',
     category: 'Fruit-Based Snacks',
-    status: 'in-development',
+    status: 'yet-to-launch',
+    statusLabel: 'Yet to launch',
     challenge: 'Develop a crispy freeze-dried fruit snack with a targeted 12-month shelf life.',
     approach: 'Formulation and processing trials are being explored for this product category.',
-    outcome: 'The portfolio provides the challenge but does not establish a confirmed result. This is a development brief.',
+    outcome: 'Yet to launch',
     image: 'freezeDriedFruit',
   },
   {
     id: 'sugar-free-sweets',
     title: 'Sugar-Free Sweets & Savouries',
     category: 'Confectionery & Savouries',
-    status: 'in-development',
+    status: 'yet-to-launch',
+    statusLabel: 'Yet to launch',
     challenge: 'Develop affordable, consistent products while maintaining taste, texture, quality, and commercial feasibility.',
     approach: 'Product formulation, ingredient selection, recipe standardization, process optimization, cost reduction, and sensory evaluation.',
-    outcome: 'The portfolio describes cost-effective and standardized products, but the project remains in its third phase.',
+    outcome: 'Yet to launch',
     image: 'sugarFreeSweets',
   },
 ] as const;
@@ -327,35 +293,23 @@ export const FAQS = [
   },
   {
     q: 'Can FoodNova help develop a product from an idea?',
-    a: 'Yes. FoodNova supports entrepreneurs and startups through the full product development journey \u2014 from concept exploration and ingredient selection to prototype trials, sensory refinement, and product standardization.',
+    a: 'Yes. FoodNova supports entrepreneurs and startups through the full product development journey — from concept exploration and ingredient selection to prototype trials, sensory refinement, and product standardization.',
   },
   {
     q: 'Can FoodNova improve an existing formulation?',
-    a: 'Yes. Product reformulation services cover recipe refinement, ingredient substitution, taste and texture improvement, consistency troubleshooting, and cost-conscious alternatives.',
+    a: 'Yes. Product reformulation services cover recipe refinement, ingredient substitution, taste and texture improvement, consistency troubleshooting, and practical processing alternatives.',
   },
   {
     q: 'How long does product development take?',
-    a: 'Timelines vary by project. Based on the documented process, ingredient research typically takes 1\u20132 days, product trials and processing take approximately 15\u201390 days, and final sensory evaluation and handover depend on courier transit, feedback turnaround, and required revisions. These are indicative timelines, not guarantees for every project.',
-  },
-  {
-    q: 'What is included in the project handover?',
-    a: 'Expected handover deliverables, as agreed for the project, include the finalized product formula, processing steps, and a commercial costing sheet. Additional deliverables depend on the scope agreed with the client.',
-  },
-  {
-    q: 'Does the client pay for ingredients and laboratory testing separately?',
-    a: 'Yes. Ingredient purchases and external laboratory testing fees are borne directly by the client. External testing may include nutritional analysis, shelf-life studies, and relevant physical or chemical parameter testing, depending on the agreed project scope.',
+    a: 'Timelines vary by project. Typical initial formulation batches range between 15 and 90 days depending on the category, feedback turnaround, and required revisions. These are indicative timelines, not guarantees for every project.',
   },
   {
     q: 'How is confidential product information handled?',
-    a: 'Every engagement begins with a Non-Disclosure / Confidentiality Agreement (NDA), according to the consultant\u2019s stated process, to help protect the client\u2019s product idea and intellectual property.',
+    a: 'Every engagement begins with a Non-Disclosure / Confidentiality Agreement (NDA), according to the consultant’s stated process, to help protect the client’s product idea and intellectual property.',
   },
   {
     q: 'Can FoodNova help with food labelling and quality requirements?',
     a: 'Yes. FoodNova provides advisory support for labelling, packaging considerations, and relevant regulatory requirements. This is consulting guidance, not official certification or legal compliance verification. Specialist requirements are identified for appropriate verification.',
-  },
-  {
-    q: 'Does FoodNova guarantee shelf life or commercial success?',
-    a: 'No. Shelf life, laboratory results, regulatory outcomes, and commercial success cannot be guaranteed without appropriate evidence and project-specific validation. FoodNova provides structured development support, not guaranteed outcomes.',
   },
   {
     q: 'How can a prospective client begin a project?',
@@ -364,10 +318,10 @@ export const FAQS = [
 ] as const;
 
 export const WHY_FOODNOVA = [
-  { title: 'Structured, Transparent Process', desc: 'A clear three-phase development journey with defined deliverables at each stage.', icon: 'Workflow' },
+  { title: 'Structured, Transparent Process', desc: 'A clear development journey with defined technical milestones at each stage.', icon: 'Workflow' },
   { title: 'Hands-on Product Development', desc: 'Direct, founder-led involvement in formulation, trials, and refinement.', icon: 'Hand' },
-  { title: 'Focus on Formulation & Cost', desc: 'Practical attention to ingredient functionality and commercial feasibility.', icon: 'Calculator' },
+  { title: 'Focus on Formulation & Quality', desc: 'Practical attention to ingredient functionality, standardization, and commercial feasibility.', icon: 'Calculator' },
   { title: 'Feedback-led Refinement', desc: 'Sensory evaluation and iterative changes guided by client input.', icon: 'MessageSquare' },
   { title: 'Confidentiality-conscious', desc: 'Every engagement begins with an NDA to protect your product idea.', icon: 'Lock' },
-  { title: 'Practical Handover Documentation', desc: 'Finalized formula, processing steps, and costing sheet for agreed scope.', icon: 'ClipboardCheck' },
+  { title: 'Practical Handover Guidance', desc: 'Clear formulation guidance, processing parameters, and quality considerations for agreed scope.', icon: 'ClipboardCheck' },
 ] as const;

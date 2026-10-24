@@ -5,7 +5,6 @@ import { IntroductionSection } from '@/components/IntroductionSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ServicesSection } from '@/components/ServicesSection';
 import { AudienceSection } from '@/components/AudienceSection';
-import { DevelopmentProcess } from '@/components/DevelopmentProcess';
 import { ProjectPortfolio } from '@/components/ProjectPortfolio';
 import { ProductBrandsSection } from '@/components/ProductBrandsSection';
 import { FounderSection } from '@/components/FounderSection';
@@ -71,7 +70,6 @@ function App() {
             <AboutSection />
             <ServicesSection />
             <AudienceSection />
-            <DevelopmentProcess />
             <ProjectPortfolio />
             <ProductBrandsSection />
             <FounderSection />

@@ -69,47 +69,25 @@ export function HeroSection() {
 
           {/* Image column */}
           <div className="lg:col-span-6 relative">
-            <div className="relative grid grid-cols-12 grid-rows-6 gap-3 h-[420px] sm:h-[500px] lg:h-[540px]">
-              {/* Main lab image */}
-              <div className="col-span-8 row-span-6 rounded-2xl overflow-hidden shadow-xl relative group">
-                <img
-                  src={IMAGES.heroLab}
-                  alt="Food technologist using a dropper to mix liquids in glass bottles in a clean laboratory"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="eager"
-                  fetchPriority="high"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
-              </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-navy/10 bg-sage h-[420px] sm:h-[480px] lg:h-[520px] group">
+              <img
+                src={IMAGES.heroLab}
+                alt="Modern food science and R&D laboratory workstation with precision glassware, beakers, pipettes, and formulation samples"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
 
-              {/* Secondary beverage image */}
-              <div className="col-span-4 row-span-3 rounded-2xl overflow-hidden shadow-lg relative group">
-                <img
-                  src={IMAGES.heroBeverage}
-                  alt="Fresh juice in glass bottles with natural ingredients"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Tertiary beverage image */}
-              <div className="col-span-4 row-span-3 rounded-2xl overflow-hidden shadow-lg relative group">
-                <img
-                  src={IMAGES.heroBeverage2}
-                  alt="Glass bottle of juice on a table"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 sm:bottom-4 sm:left-2 bg-white rounded-xl shadow-lg border border-navy/5 p-3.5 flex items-center gap-3 max-w-[200px]">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-mint-50 flex-shrink-0">
-                  <FlaskConical className="h-5 w-5 text-mint-600" />
+              {/* Laboratory science overlay tag */}
+              <div className="absolute bottom-5 left-5 right-5 sm:right-auto bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-navy/5 p-4 flex items-center gap-3.5 max-w-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-mint-50 flex-shrink-0">
+                  <FlaskConical className="h-6 w-6 text-mint-600" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-navy leading-tight">Science-led</p>
-                  <p className="text-xs text-slate-light leading-tight">Formulation & R&D</p>
+                  <p className="text-xs font-bold text-navy uppercase tracking-wider">Food Science & R&D</p>
+                  <p className="text-xs text-slate-light leading-snug mt-0.5">Formulation trials, laboratory precision & standardization</p>
                 </div>
               </div>
             </div>

@@ -5,11 +5,13 @@ import { scrollToId } from '@/lib/scroll';
 
 const FOCUS_AREAS = [
   'Food R&D',
-  'Product development and formulation',
-  'Sensory evaluation',
-  'Product standardization',
-  'Cost-conscious formulation',
-  'Processing and quality management',
+  'Product Development & Formulation',
+  'Product Standardization',
+  'Processing and Quality Management',
+  'Food Safety Certifications',
+  'Food Safety and Quality Systems',
+  'Labelling and Regulatory Compliance',
+  'Certification-Related Technical Guidance',
 ];
 
 export function FounderSection() {
@@ -23,15 +25,15 @@ export function FounderSection() {
               <div className="rounded-2xl overflow-hidden shadow-xl bg-sage">
                 <img
                   src={IMAGES.founderPlaceholder}
-                  alt="Portrait placeholder for Joshika Mahendran, Food Technologist and Founder"
+                  alt="Portrait for Joshika M, Food Technologist and Founder"
                   className="w-full h-[420px] lg:h-[520px] object-cover"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
               <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-4">
-                <p className="font-display text-base font-bold text-navy">Joshika Mahendran</p>
-                <p className="text-sm text-mint-600 font-medium">Founder & Food Technologist</p>
+                <p className="font-display text-base font-bold text-navy">Joshika M</p>
+                <p className="text-sm text-mint-600 font-medium">{BUSINESS.title}</p>
               </div>
               <div className="absolute -top-3 -right-3 bg-mint-400 text-navy text-xs font-semibold rounded-full px-3.5 py-1.5 shadow-md border border-white/40">
                 Founder & Food Technologist
@@ -50,7 +52,7 @@ export function FounderSection() {
 
             <Reveal delay={100}>
               <p className="text-base text-slate leading-relaxed">
-                Joshika Mahendran is a Food Technologist with 3 years of industrial experience in food R&D, product development, formulation, sensory evaluation, and quality management. Through FoodNova Consulting, she aims to help food businesses transform ideas into innovative, consistent, and market-ready products through science-driven solutions.
+                Joshika M is a Food Technologist with 3 years of industrial experience in food R&D, product development, formulation, sensory evaluation, and quality management. Through FoodNova Consulting, she aims to help food businesses transform ideas into innovative, consistent, and market-ready products through science-driven solutions.
               </p>
             </Reveal>
 
@@ -68,7 +70,14 @@ export function FounderSection() {
                 <p className="text-sm font-semibold text-navy mb-3">Professional Focus Areas</p>
                 <div className="flex flex-wrap gap-2">
                   {FOCUS_AREAS.map((area) => (
-                    <span key={area} className="rounded-full bg-sage border border-mint-200 px-3.5 py-1.5 text-xs font-medium text-navy">
+                    <span
+                      key={area}
+                      className={`rounded-full px-3.5 py-1.5 text-xs font-medium ${
+                        area === 'Food Safety Certifications'
+                          ? 'bg-mint-400 text-navy font-semibold shadow-sm border border-mint-500/20'
+                          : 'bg-sage border border-mint-200 text-navy'
+                      }`}
+                    >
                       {area}
                     </span>
                   ))}
