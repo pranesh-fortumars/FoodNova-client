@@ -67,28 +67,80 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Image column */}
+          {/* Image column with multi-image scientific laboratory composition & descriptive logo */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-navy/10 bg-sage h-[420px] sm:h-[480px] lg:h-[520px] group">
-              <img
-                src={IMAGES.heroLab}
-                alt="Modern food science and R&D laboratory workstation with precision glassware, beakers, pipettes, and formulation samples"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
+            <div className="relative">
+              {/* Main Laboratory Image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-navy/10 bg-sage h-[360px] sm:h-[440px] lg:h-[470px] group">
+                <img
+                  src={IMAGES.heroLab}
+                  alt="Food technologist in sterile blue gloves examining vibrant formulation liquid in an Erlenmeyer flask under research microscope"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
 
-              {/* Laboratory science overlay tag */}
-              <div className="absolute bottom-5 left-5 right-5 sm:right-auto bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-navy/5 p-4 flex items-center gap-3.5 max-w-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-mint-50 flex-shrink-0">
-                  <FlaskConical className="h-6 w-6 text-mint-600" />
+                {/* Top-Right Descriptive FoodNova Logo Emblem on the Image */}
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-lg border border-navy/10 flex items-center gap-2.5">
+                  <div className="h-9 w-9 rounded-xl bg-navy flex items-center justify-center flex-shrink-0">
+                    <svg viewBox="0 0 40 40" className="h-6 w-6" aria-hidden="true">
+                      <circle cx="20" cy="20" r="18" fill="none" stroke="#42DFA8" strokeWidth="2" />
+                      <path d="M20 9 C14 9, 10 14, 10 20 C10 26, 15 29, 20 29 C25 29, 30 26, 30 20 C30 14, 26 9, 20 9 Z" fill="none" stroke="#42DFA8" strokeWidth="1.8" />
+                      <path d="M14 18 Q17 15, 20 18 Q23 21, 26 18" fill="none" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
+                      <circle cx="14" cy="18" r="1.5" fill="#42DFA8" />
+                      <circle cx="26" cy="18" r="1.5" fill="#42DFA8" />
+                      <circle cx="20" cy="22" r="2" fill="#FFFFFF" />
+                    </svg>
+                  </div>
+                  <div className="pr-1">
+                    <p className="font-display font-bold text-xs text-navy leading-none">FoodNova</p>
+                    <p className="text-[10px] text-mint-700 font-medium tracking-wider uppercase mt-0.5">R&D Consulting</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs font-bold text-navy uppercase tracking-wider">Food Science & R&D</p>
-                  <p className="text-xs text-slate-light leading-snug mt-0.5">Formulation trials, laboratory precision & standardization</p>
+
+                {/* Primary Card - Food Science & R&D Descriptive Badge */}
+                <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 p-4 flex items-center gap-3.5 max-w-sm">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-50 flex-shrink-0 text-mint-600">
+                    <FlaskConical className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Food Science & R&D</p>
+                    <p className="text-xs text-slate-light leading-snug mt-0.5">
+                      Formulation trials, laboratory precision & standardization
+                    </p>
+                  </div>
                 </div>
+              </div>
+
+              {/* Secondary Floating Scientific Formulation Sample Card (Bottom Right overlap) */}
+              <div className="hidden sm:flex absolute -bottom-6 -right-4 lg:-right-6 bg-white rounded-2xl p-2.5 shadow-2xl border border-navy/10 items-center gap-3 max-w-[240px] animate-fade-in z-20">
+                <div className="relative h-16 w-16 rounded-xl overflow-hidden flex-shrink-0 bg-sage">
+                  <img
+                    src={IMAGES.labPipette}
+                    alt="Precision laboratory beaker with sample formulation"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-mint-500/10" />
+                </div>
+                <div className="min-w-0 pr-1">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-mint-400" />
+                    <p className="text-[11px] font-bold text-navy uppercase tracking-wide">Formulation</p>
+                  </div>
+                  <p className="text-[11px] text-slate-light leading-tight mt-0.5">
+                    Trial-tested recipes & process control
+                  </p>
+                </div>
+              </div>
+
+              {/* Tertiary Floating Quality Verification Pill (Top Left overlap) */}
+              <div className="hidden md:flex absolute -top-4 -left-4 bg-navy text-white rounded-xl py-2 px-3.5 shadow-xl border border-white/10 items-center gap-2 z-20">
+                <ShieldCheck className="h-4 w-4 text-mint-400 flex-shrink-0" />
+                <span className="text-xs font-medium tracking-wide">Precision R&D & QA</span>
               </div>
             </div>
           </div>
