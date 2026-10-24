@@ -140,19 +140,12 @@ export function HeroSection() {
 
               {/* Top-Right Floating Descriptive FoodNova Logo Emblem Badge */}
               <div className="absolute -top-4 right-2 sm:-top-5 sm:right-4 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-xl border border-navy/10 flex items-center gap-2.5 z-20">
-                <div className="h-9 w-9 rounded-xl bg-navy flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <svg viewBox="0 0 40 40" className="h-6 w-6" aria-hidden="true">
-                    <circle cx="20" cy="20" r="18" fill="none" stroke="#42DFA8" strokeWidth="2" />
-                    <path d="M20 9 C14 9, 10 14, 10 20 C10 26, 15 29, 20 29 C25 29, 30 26, 30 20 C30 14, 26 9, 20 9 Z" fill="none" stroke="#42DFA8" strokeWidth="1.8" />
-                    <path d="M14 18 Q17 15, 20 18 Q23 21, 26 18" fill="none" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
-                    <circle cx="14" cy="18" r="1.5" fill="#42DFA8" />
-                    <circle cx="26" cy="18" r="1.5" fill="#42DFA8" />
-                    <circle cx="20" cy="22" r="2" fill="#FFFFFF" />
-                  </svg>
+                <div className="h-9 w-9 rounded-xl bg-navy flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden p-1">
+                  <img src="/foodnova-symbol.svg" alt="FoodNova Consulting Logo" className="h-full w-full object-contain" />
                 </div>
                 <div className="pr-1.5">
                   <p className="font-display font-bold text-xs text-navy leading-none">FoodNova</p>
-                  <p className="text-[10px] text-mint-700 font-semibold tracking-wider uppercase mt-0.5">R&D Consulting</p>
+                  <p className="text-[10px] text-mint-700 font-semibold tracking-wider uppercase mt-0.5">Consulting</p>
                 </div>
               </div>
 

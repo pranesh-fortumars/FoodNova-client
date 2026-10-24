@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Definitions for glowing atomic core -->
+  <defs>
+    <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#42DFA8" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#42DFA8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#211747" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <g id="foodnova-symbol">
+    <!-- Glowing backdrop behind bulb -->
+    <ellipse cx="250" cy="200" rx="90" ry="100" fill="url(#bulbGlow)" />
+
+    <!-- Atomic Orbits (3 intersecting elliptical rings) -->
+    <!-- Orbit 1: Horizontal / Slight Angle -->
+    <ellipse cx="250" cy="200" rx="190" ry="68" fill="none" stroke="#42DFA8" stroke-width="4.5" transform="rotate(-15 250 200)" />
+    <!-- Orbit 2: Angled 45 deg -->
+    <ellipse cx="250" cy="200" rx="190" ry="68" fill="none" stroke="#42DFA8" stroke-width="4.5" transform="rotate(45 250 200)" />
+    <!-- Orbit 3: Angled 105 deg (near vertical) -->
+    <ellipse cx="250" cy="200" rx="190" ry="68" fill="none" stroke="#42DFA8" stroke-width="4.5" transform="rotate(105 250 200)" />
+
+    <!-- Atomic Orbit Electrons / Nodes -->
+    <circle cx="260" cy="55" r="9" fill="#42DFA8" />
+    <circle cx="240" cy="345" r="9" fill="#42DFA8" />
+    <circle cx="100" cy="140" r="9" fill="#42DFA8" />
+    <circle cx="400" cy="260" r="9" fill="#42DFA8" />
+    <circle cx="80" cy="225" r="9" fill="#42DFA8" />
+    <circle cx="420" cy="175" r="9" fill="#42DFA8" />
+
+    <!-- Central Scientific Lightbulb Outline -->
+    <!-- Bulb Head & Body -->
+    <path d="M195 185 C195 140, 220 115, 250 115 C280 115, 305 140, 305 185 C305 208, 290 228, 280 242 L280 258 C280 262, 276 265, 272 265 L228 265 C224 265, 220 262, 220 258 L220 242 C210 228, 195 208, 195 185 Z" 
+          fill="#42DFA8" stroke="#42DFA8" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Bulb Screw Base Rings -->
+    <path d="M224 274 L276 274" stroke="#42DFA8" stroke-width="6.5" stroke-linecap="round" />
+    <path d="M228 285 L272 285" stroke="#42DFA8" stroke-width="6.5" stroke-linecap="round" />
+    <path d="M236 295 C236 300, 264 300, 264 295" stroke="#42DFA8" stroke-width="6.5" stroke-linecap="round" fill="none" />
+
+    <!-- Inner Core Cutout (Deep Navy): Leaf + Fork & Spoon -->
+    <!-- Circular / Drop Inner Cutout Window -->
+    <circle cx="250" cy="188" r="40" fill="#211747" />
+
+    <!-- Sprouting Leaf arching from left around top -->
+    <path d="M228 202 C226 170, 240 152, 268 155 C264 163, 258 168, 246 170 C240 178, 235 190, 232 202 Z" fill="#42DFA8" />
+    <path d="M256 156 C266 150, 274 153, 276 160 C269 164, 262 163, 256 156 Z" fill="#42DFA8" />
+
+    <!-- Cutlery: Fork & Spoon inside inner disc -->
+    <!-- Fork (Left) -->
+    <path d="M242 195 L242 215" stroke="#42DFA8" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M238 184 L238 191 C238 194, 246 194, 246 191 L246 184" fill="none" stroke="#42DFA8" stroke-width="2" stroke-linecap="round" />
+    <line x1="242" y1="184" x2="242" y2="192" stroke="#42DFA8" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Spoon (Right) -->
+    <path d="M258 195 L258 215" stroke="#42DFA8" stroke-width="2.5" stroke-linecap="round" />
+    <ellipse cx="258" cy="187" rx="4.5" ry="6.5" fill="#42DFA8" />
+  </g>
+</svg>
