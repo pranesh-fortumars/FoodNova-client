@@ -67,78 +67,97 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Image column with multi-image scientific laboratory composition & descriptive logo */}
+          {/* Authentic Multi-Image Scientific Grid Layout with Descriptive Logo Badge */}
           <div className="lg:col-span-6 relative">
             <div className="relative">
-              {/* Main Laboratory Image */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-navy/10 bg-sage h-[360px] sm:h-[440px] lg:h-[470px] group">
-                <img
-                  src={IMAGES.heroLab}
-                  alt="Food technologist in sterile blue gloves examining vibrant formulation liquid in an Erlenmeyer flask under research microscope"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-
-                {/* Top-Right Descriptive FoodNova Logo Emblem on the Image */}
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-lg border border-navy/10 flex items-center gap-2.5">
-                  <div className="h-9 w-9 rounded-xl bg-navy flex items-center justify-center flex-shrink-0">
-                    <svg viewBox="0 0 40 40" className="h-6 w-6" aria-hidden="true">
-                      <circle cx="20" cy="20" r="18" fill="none" stroke="#42DFA8" strokeWidth="2" />
-                      <path d="M20 9 C14 9, 10 14, 10 20 C10 26, 15 29, 20 29 C25 29, 30 26, 30 20 C30 14, 26 9, 20 9 Z" fill="none" stroke="#42DFA8" strokeWidth="1.8" />
-                      <path d="M14 18 Q17 15, 20 18 Q23 21, 26 18" fill="none" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
-                      <circle cx="14" cy="18" r="1.5" fill="#42DFA8" />
-                      <circle cx="26" cy="18" r="1.5" fill="#42DFA8" />
-                      <circle cx="20" cy="22" r="2" fill="#FFFFFF" />
-                    </svg>
-                  </div>
-                  <div className="pr-1">
-                    <p className="font-display font-bold text-xs text-navy leading-none">FoodNova</p>
-                    <p className="text-[10px] text-mint-700 font-medium tracking-wider uppercase mt-0.5">R&D Consulting</p>
-                  </div>
-                </div>
-
-                {/* Primary Card - Food Science & R&D Descriptive Badge */}
-                <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 p-4 flex items-center gap-3.5 max-w-sm">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-50 flex-shrink-0 text-mint-600">
-                    <FlaskConical className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-navy uppercase tracking-wider">Food Science & R&D</p>
-                    <p className="text-xs text-slate-light leading-snug mt-0.5">
-                      Formulation trials, laboratory precision & standardization
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Secondary Floating Scientific Formulation Sample Card (Bottom Right overlap) */}
-              <div className="hidden sm:flex absolute -bottom-6 -right-4 lg:-right-6 bg-white rounded-2xl p-2.5 shadow-2xl border border-navy/10 items-center gap-3 max-w-[240px] animate-fade-in z-20">
-                <div className="relative h-16 w-16 rounded-xl overflow-hidden flex-shrink-0 bg-sage">
+              {/* Asymmetric 12-Column Laboratory Grid */}
+              <div className="grid grid-cols-12 gap-3 sm:gap-4 h-[440px] sm:h-[490px] lg:h-[510px]">
+                {/* 1. Main Focus: Technologist in R&D Microscope Lab (8 Columns) */}
+                <div className="col-span-8 h-full relative rounded-3xl overflow-hidden shadow-2xl border border-navy/10 bg-sage group">
                   <img
-                    src={IMAGES.labPipette}
-                    alt="Precision laboratory beaker with sample formulation"
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    src={IMAGES.heroLab}
+                    alt="Food technologist in sterile blue gloves examining vibrant formulation liquid in an Erlenmeyer flask under research microscope"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-mint-500/10" />
-                </div>
-                <div className="min-w-0 pr-1">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-mint-400" />
-                    <p className="text-[11px] font-bold text-navy uppercase tracking-wide">Formulation</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" />
+
+                  {/* Primary Card - Food Science & R&D Descriptive Badge */}
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 p-3 sm:p-3.5 flex items-center gap-3 max-w-[310px]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-mint-50 flex-shrink-0 text-mint-600">
+                      <FlaskConical className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-navy uppercase tracking-wider">Food Science & R&D</p>
+                      <p className="text-[11px] text-slate-light leading-snug mt-0.5">
+                        Formulation trials & laboratory precision
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-[11px] text-slate-light leading-tight mt-0.5">
-                    Trial-tested recipes & process control
-                  </p>
+                </div>
+
+                {/* Right Column Grid: Two Complementary Scientific Images (4 Columns) */}
+                <div className="col-span-4 flex flex-col gap-3 sm:gap-4 h-full">
+                  {/* 2. Top-Right: Food Technologist Working in Testing Environment */}
+                  <div className="relative flex-1 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-navy/10 bg-sage group">
+                    <img
+                      src={IMAGES.heroLabAlt}
+                      alt="Food technologist testing product samples in food laboratory"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
+                    <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3">
+                      <span className="inline-flex items-center gap-1 rounded-lg bg-navy/85 backdrop-blur-sm px-2 py-1 text-[10px] font-semibold text-white tracking-wide">
+                        <span className="h-1.5 w-1.5 rounded-full bg-mint-400" />
+                        Sample Testing
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* 3. Bottom-Right: Precision Formulation & Pipette Beakers */}
+                  <div className="relative flex-1 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-navy/10 bg-sage group">
+                    <img
+                      src={IMAGES.labPipette}
+                      alt="Precision formulation measuring with pipette and graduated cylinders"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
+                    <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3">
+                      <span className="inline-flex items-center gap-1 rounded-lg bg-navy/85 backdrop-blur-sm px-2 py-1 text-[10px] font-semibold text-white tracking-wide">
+                        <span className="h-1.5 w-1.5 rounded-full bg-mint-400" />
+                        Formulation Lab
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Tertiary Floating Quality Verification Pill (Top Left overlap) */}
-              <div className="hidden md:flex absolute -top-4 -left-4 bg-navy text-white rounded-xl py-2 px-3.5 shadow-xl border border-white/10 items-center gap-2 z-20">
+              {/* Top-Right Floating Descriptive FoodNova Logo Emblem Badge */}
+              <div className="absolute -top-4 right-2 sm:-top-5 sm:right-4 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-xl border border-navy/10 flex items-center gap-2.5 z-20">
+                <div className="h-9 w-9 rounded-xl bg-navy flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg viewBox="0 0 40 40" className="h-6 w-6" aria-hidden="true">
+                    <circle cx="20" cy="20" r="18" fill="none" stroke="#42DFA8" strokeWidth="2" />
+                    <path d="M20 9 C14 9, 10 14, 10 20 C10 26, 15 29, 20 29 C25 29, 30 26, 30 20 C30 14, 26 9, 20 9 Z" fill="none" stroke="#42DFA8" strokeWidth="1.8" />
+                    <path d="M14 18 Q17 15, 20 18 Q23 21, 26 18" fill="none" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" />
+                    <circle cx="14" cy="18" r="1.5" fill="#42DFA8" />
+                    <circle cx="26" cy="18" r="1.5" fill="#42DFA8" />
+                    <circle cx="20" cy="22" r="2" fill="#FFFFFF" />
+                  </svg>
+                </div>
+                <div className="pr-1.5">
+                  <p className="font-display font-bold text-xs text-navy leading-none">FoodNova</p>
+                  <p className="text-[10px] text-mint-700 font-semibold tracking-wider uppercase mt-0.5">R&D Consulting</p>
+                </div>
+              </div>
+
+              {/* Floating Quality Assurance Badge (Top-Left) */}
+              <div className="hidden sm:flex absolute -top-3.5 -left-3.5 bg-navy text-white rounded-xl py-1.5 px-3 shadow-xl border border-white/10 items-center gap-2 z-20">
                 <ShieldCheck className="h-4 w-4 text-mint-400 flex-shrink-0" />
                 <span className="text-xs font-medium tracking-wide">Precision R&D & QA</span>
               </div>
