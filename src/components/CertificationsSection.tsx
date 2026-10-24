@@ -1,5 +1,5 @@
 import {
-  Sparkles, Award, ShieldCheck, FileCheck, Package, GraduationCap, Info,
+  Sparkles, Award, ShieldCheck, FileCheck, Package, GraduationCap,
 } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { CERTIFICATIONS } from '@/data/content';
@@ -43,15 +43,6 @@ export function CertificationsSection() {
             );
           })}
         </div>
-
-        <Reveal delay={500}>
-          <div className="mt-10 flex items-start gap-3 rounded-xl bg-amber-50 border border-amber-200 p-4 max-w-3xl mx-auto">
-            <Info className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            <p className="text-xs text-slate leading-relaxed">
-              Certificate titles must be verified against the original documents before publication. Issuing organizations, dates, grades, certificate numbers, and logos are not displayed until verified. Training certificates do not automatically make the consultant an accredited auditor or certification authority. Authentic certificate images can be uploaded by the client.
-            </p>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
