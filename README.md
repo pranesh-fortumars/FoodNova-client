@@ -5,8 +5,8 @@ Website for **FoodNova Consulting**, a food product development and R&D consulta
 ---
 
 ## 🌐 Live Deployment
-- **Live Vercel URL:** [https://instant-flint-1eja1tu.tmp.now](https://instant-flint-1eja1tu.tmp.now)
-- **Claim Deployment URL (to bind to your Vercel account):** [https://vercel.com/claim-deployment?code=ba97c295-ef97-4c03-8d50-519e298c4a7c](https://vercel.com/claim-deployment?code=ba97c295-ef97-4c03-8d50-519e298c4a7c)
+- **Live Vercel URL:** [https://brisk-cello-91qujb8.tmp.now](https://brisk-cello-91qujb8.tmp.now)
+- **Claim Deployment URL (to bind to your Vercel account):** [https://vercel.com/claim-deployment?code=0dffb380-3a8c-46e4-93cc-9325f48635da](https://vercel.com/claim-deployment?code=0dffb380-3a8c-46e4-93cc-9325f48635da)
 
 ---
 

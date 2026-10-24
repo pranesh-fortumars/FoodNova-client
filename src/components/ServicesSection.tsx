@@ -15,6 +15,13 @@ const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
 export function ServicesSection() {
   const [expanded, setExpanded] = useState<string | null>(null);
 
+  const handleServiceClick = (serviceTitle: string) => {
+    window.dispatchEvent(
+      new CustomEvent('select-service', { detail: { service: serviceTitle } })
+    );
+    scrollToId('contact');
+  };
+
   return (
     <section id="services" className="py-20 lg:py-28 bg-ivory">
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-10">
@@ -76,7 +83,7 @@ export function ServicesSection() {
                   </div>
 
                   <button
-                    onClick={() => scrollToId('contact')}
+                    onClick={() => handleServiceClick(service.title)}
                     className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-mint-600 hover:text-mint-700 transition-colors"
                   >
                     {service.cta}

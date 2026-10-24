@@ -33,9 +33,6 @@ export function FounderSection() {
                 <p className="font-display text-base font-bold text-navy">Joshika Mahendran</p>
                 <p className="text-sm text-mint-600 font-medium">Founder & Food Technologist</p>
               </div>
-              <div className="absolute -top-3 -right-3 bg-amber-400 text-navy text-xs font-semibold rounded-full px-3 py-1.5 shadow-md">
-                Placeholder — Replace with founder photo
-              </div>
             </div>
           </Reveal>
 

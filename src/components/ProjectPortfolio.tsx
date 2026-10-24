@@ -204,6 +204,37 @@ export function ProjectPortfolio() {
                 </h4>
                 <p className="text-sm text-slate leading-relaxed">{selected.outcome}</p>
               </div>
+
+              <div className="pt-4 border-t border-navy/10 flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => {
+                    window.dispatchEvent(
+                      new CustomEvent('select-service', {
+                        detail: {
+                          service: 'Food Product Development',
+                          category: selected.category.includes('Beverage') ? 'Beverages' :
+                                    selected.category.includes('Ready-to-Eat') ? 'Ready-to-eat products' :
+                                    selected.category.includes('Ready-to-Cook') ? 'Ready-to-cook products' :
+                                    selected.category.includes('Sweets') || selected.category.includes('Confectionery') ? 'Bakery and confectionery' :
+                                    selected.category.includes('Snacks') ? 'Snacks and savouries' : 'Other'
+                        }
+                      })
+                    );
+                    setSelected(null);
+                    scrollToId('contact');
+                  }}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-navy text-white px-5 py-3 text-sm font-semibold hover:bg-navy-700 transition-colors shadow-sm"
+                >
+                  Discuss a Similar Project
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => setSelected(null)}
+                  className="inline-flex items-center justify-center rounded-full border border-navy/15 bg-white px-5 py-3 text-sm font-semibold text-navy hover:bg-navy/5 transition-colors"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>

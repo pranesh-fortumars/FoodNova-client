@@ -81,6 +81,20 @@ export function ContactSection() {
   const [status, setStatus] = useState<Status>('idle');
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
+  useEffect(() => {
+    const handleServiceSelect = (e: CustomEvent<{ service: string; category?: string }>) => {
+      if (e.detail?.service) {
+        setForm((prev) => ({
+          ...prev,
+          service: e.detail.service,
+          ...(e.detail.category ? { productCategory: e.detail.category } : {}),
+        }));
+      }
+    };
+    window.addEventListener('select-service' as any, handleServiceSelect as any);
+    return () => window.removeEventListener('select-service' as any, handleServiceSelect as any);
+  }, []);
+
   const handleCopy = (text: string, key: string) => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text);
