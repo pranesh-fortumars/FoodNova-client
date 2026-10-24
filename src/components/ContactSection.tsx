@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import {
   Phone, Mail, MapPin, MessageCircle, Loader2, CheckCircle2, AlertCircle,
   Send, User, Building2, Copy, Check,
