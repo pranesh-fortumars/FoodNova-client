@@ -33,6 +33,9 @@ export function FounderSection() {
                 <p className="font-display text-base font-bold text-navy">Joshika Mahendran</p>
                 <p className="text-sm text-mint-600 font-medium">Founder & Food Technologist</p>
               </div>
+              <div className="absolute -top-3 -right-3 bg-mint-400 text-navy text-xs font-semibold rounded-full px-3.5 py-1.5 shadow-md border border-white/40">
+                Founder & Food Technologist
+              </div>
             </div>
           </Reveal>
 
