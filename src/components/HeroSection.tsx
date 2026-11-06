@@ -15,11 +15,6 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Text column */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-mint-200 bg-mint-50 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-mint-700 uppercase">
-              <span className="h-1.5 w-1.5 rounded-full bg-mint-400 animate-pulse" />
-              Food Product Development & R&D Consulting
-            </div>
-
             <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] font-bold text-navy tracking-tight">
               From Food Ideas to{' '}
               <span className="relative inline-block">

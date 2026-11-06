@@ -73,7 +73,7 @@ function App() {
             <AudienceSection />
             <ProjectPortfolio />
             <TestimonialSection />
-            <ProductBrandsSection />
+            {/* <ProductBrandsSection /> */}
             <FounderSection />
             <CertificationsSection />
             <WhyFoodNovaSection />
