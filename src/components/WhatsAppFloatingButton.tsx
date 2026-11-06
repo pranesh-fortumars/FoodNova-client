@@ -7,9 +7,9 @@ export function WhatsAppFloatingButton() {
   )}`;
 
   return (
-    <div className="fixed bottom-5 right-4 sm:right-5 z-40 group flex items-center">
-      {/* Tooltip on hover */}
-      <span className="hidden sm:inline-block pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3 px-3 py-1.5 rounded-lg bg-navy text-white text-xs font-medium shadow-md whitespace-nowrap">
+    <div className="fixed bottom-5 right-5 z-40 group flex items-center">
+      {/* Tooltip on desktop hover only */}
+      <span className="hidden md:inline-block pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3 px-3 py-1.5 rounded-lg bg-navy text-white text-xs font-medium shadow-md whitespace-nowrap">
         Chat with Joshika on WhatsApp
       </span>
       <a
