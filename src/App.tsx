@@ -6,6 +6,7 @@ import { AboutSection } from '@/components/AboutSection';
 import { ServicesSection } from '@/components/ServicesSection';
 import { AudienceSection } from '@/components/AudienceSection';
 import { ProjectPortfolio } from '@/components/ProjectPortfolio';
+import { TestimonialSection } from '@/components/TestimonialSection';
 import { ProductBrandsSection } from '@/components/ProductBrandsSection';
 import { FounderSection } from '@/components/FounderSection';
 import { CertificationsSection } from '@/components/CertificationsSection';
@@ -71,6 +72,7 @@ function App() {
             <ServicesSection />
             <AudienceSection />
             <ProjectPortfolio />
+            <TestimonialSection />
             <ProductBrandsSection />
             <FounderSection />
             <CertificationsSection />
