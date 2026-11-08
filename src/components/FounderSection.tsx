@@ -25,8 +25,8 @@ export function FounderSection() {
               <div className="rounded-2xl overflow-hidden shadow-xl bg-sage">
                 <img
                   src={IMAGES.founderPlaceholder}
-                  alt="Portrait for Joshika M, Food Technologist and Founder"
-                  className="w-full h-[420px] lg:h-[520px] object-cover"
+                  alt="Joshika M - Founder & Food Technologist at FoodNova Consulting"
+                  className="w-full h-[420px] lg:h-[520px] object-cover object-top"
                   loading="lazy"
                   decoding="async"
                 />

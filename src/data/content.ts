@@ -32,7 +32,7 @@ export const IMAGES = {
   ingredients: 'https://images.pexels.com/photos/4871239/pexels-photo-4871239.jpeg?auto=compress&cs=tinysrgb&w=800',
   spices: 'https://images.pexels.com/photos/6439856/pexels-photo-6439856.jpeg?auto=compress&cs=tinysrgb&w=800',
   packaging: 'https://images.pexels.com/photos/12024976/pexels-photo-12024976.jpeg?auto=compress&cs=tinysrgb&w=800',
-  founderPlaceholder: 'https://images.pexels.com/photos/9768438/pexels-photo-9768438.jpeg?auto=compress&cs=tinysrgb&w=600',
+  founderPlaceholder: '/founder-joshika.jpg',
   founderAlt: 'https://images.pexels.com/photos/4031686/pexels-photo-4031686.jpeg?auto=compress&cs=tinysrgb&w=600',
   // Projects
   beverageRtd: 'https://images.pexels.com/photos/5668181/pexels-photo-5668181.jpeg?auto=compress&cs=tinysrgb&w=800',
