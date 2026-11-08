@@ -21,21 +21,28 @@ export function FounderSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Image */}
           <Reveal className="lg:col-span-5">
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-xl bg-sage">
+            <div className="relative max-w-md mx-auto lg:max-w-none">
+              <div className="rounded-3xl overflow-hidden shadow-2xl bg-navy border border-navy/10 aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] max-h-[580px]">
                 <img
                   src={IMAGES.founderPlaceholder}
                   alt="Joshika M - Founder & Food Technologist at FoodNova Consulting"
-                  className="w-full h-[420px] lg:h-[520px] object-cover object-top"
+                  className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 hover:scale-[1.02]"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-4">
-                <p className="font-display text-base font-bold text-navy">Joshika M</p>
-                <p className="text-sm text-mint-600 font-medium">{BUSINESS.title}</p>
+              
+              {/* Bottom Card - Floating Name Pill */}
+              <div className="absolute -bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-4 border border-navy/8 flex items-center justify-between">
+                <div>
+                  <p className="font-display text-base sm:text-lg font-bold text-navy leading-tight">Joshika M</p>
+                  <p className="text-xs sm:text-sm text-mint-600 font-semibold mt-0.5">{BUSINESS.title}</p>
+                </div>
+                <div className="h-2 w-2 rounded-full bg-mint-400 animate-pulse" />
               </div>
-              <div className="absolute -top-3 -right-3 bg-mint-400 text-navy text-xs font-semibold rounded-full px-3.5 py-1.5 shadow-md border border-white/40">
+
+              {/* Top Pill Badge */}
+              <div className="absolute -top-3.5 -right-2 sm:-right-3 bg-mint-400 text-navy text-xs font-bold rounded-full px-4 py-1.5 shadow-lg border border-white/50 tracking-wide">
                 Founder & Food Technologist
               </div>
             </div>
