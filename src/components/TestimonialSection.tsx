@@ -1,8 +1,30 @@
 import { useState, useRef } from 'react';
-import { Play, Pause, Volume2, VolumeX, MessageSquareQuote, CheckCircle2, Sparkles } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, MessageSquareQuote, CheckCircle2, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Reveal } from './Reveal';
 
-export function TestimonialSection() {
+interface VideoTestimonial {
+  id: string;
+  src: string;
+  label: string;
+  subtitle: string;
+}
+
+const TESTIMONIALS: VideoTestimonial[] = [
+  {
+    id: 'story-1',
+    src: '/testimonial-video.mp4',
+    label: 'Client Story 1',
+    subtitle: 'Formulation & Trials Feedback',
+  },
+  {
+    id: 'story-2',
+    src: '/testimonial-video-2.mp4',
+    label: 'Client Story 2',
+    subtitle: 'Production & R&D Experience',
+  },
+];
+
+function VideoPlayerCard({ item }: { item: VideoTestimonial }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -18,7 +40,8 @@ export function TestimonialSection() {
     }
   };
 
-  const toggleMute = () => {
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (!videoRef.current) return;
     videoRef.current.muted = !isMuted;
     setIsMuted(!isMuted);
@@ -27,6 +50,66 @@ export function TestimonialSection() {
   const handleVideoEnded = () => {
     setIsPlaying(false);
   };
+
+  return (
+    <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-navy border border-navy/10 group aspect-[9/16] w-full max-w-[340px] sm:max-w-[380px] mx-auto flex items-center justify-center">
+      <video
+        ref={videoRef}
+        src={item.src}
+        playsInline
+        preload="metadata"
+        onEnded={handleVideoEnded}
+        className="w-full h-full object-contain bg-black cursor-pointer"
+        onClick={togglePlay}
+      />
+
+      {/* Top Floating Badge */}
+      <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
+        <span className="px-3 py-1 rounded-full bg-navy/80 backdrop-blur-md text-mint-400 text-xs font-semibold border border-white/10 shadow-sm">
+          {item.label}
+        </span>
+      </div>
+
+      {/* Overlay Play / Pause Button */}
+      {!isPlaying && (
+        <div
+          onClick={togglePlay}
+          className="absolute inset-0 bg-navy/35 backdrop-blur-[2px] flex items-center justify-center cursor-pointer transition-all hover:bg-navy/20"
+        >
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-mint-400 text-navy flex items-center justify-center shadow-2xl transform group-hover:scale-105 transition-transform">
+            <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-navy ml-1" />
+          </div>
+        </div>
+      )}
+
+      {/* Bottom Video Controls Bar */}
+      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy/95 via-navy/60 to-transparent p-4 flex items-center justify-between text-white transition-opacity z-10">
+        <button
+          onClick={togglePlay}
+          aria-label={isPlaying ? 'Pause video' : 'Play video'}
+          className="p-2 rounded-full hover:bg-white/20 transition-colors"
+        >
+          {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 fill-white" />}
+        </button>
+
+        <div className="text-center px-2">
+          <p className="text-xs font-semibold tracking-wide text-white">{item.subtitle}</p>
+        </div>
+
+        <button
+          onClick={toggleMute}
+          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+          className="p-2 rounded-full hover:bg-white/20 transition-colors"
+        >
+          {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function TestimonialSection() {
+  const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
     <section id="testimonials" className="py-20 lg:py-28 bg-white border-b border-navy/5 relative overflow-hidden">
@@ -38,67 +121,71 @@ export function TestimonialSection() {
         <Reveal className="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mint-50 border border-mint-200/60 mb-3">
             <MessageSquareQuote className="w-4 h-4 text-mint-600" />
-            <span className="text-xs font-semibold tracking-wide text-mint-600 uppercase">Client Story & Feedback</span>
+            <span className="text-xs font-semibold tracking-wide text-mint-600 uppercase">Client Stories & Feedback</span>
           </div>
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-navy leading-tight">
-            Hear Directly from Our Client
+            Hear Directly from Our Clients
           </h2>
           <p className="text-slate leading-relaxed mt-3 text-base">
             Real feedback on our hands-on food R&amp;D, formulation trials, and dedicated consulting support.
           </p>
+
+          {/* Quick Tab Switcher for Videos */}
+          <div className="inline-flex p-1.5 bg-ivory rounded-2xl border border-navy/10 mt-6 shadow-sm">
+            {TESTIMONIALS.map((t, idx) => (
+              <button
+                key={t.id}
+                onClick={() => setActiveTab(idx)}
+                className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                  activeTab === idx
+                    ? 'bg-navy text-white shadow-md'
+                    : 'text-navy/70 hover:text-navy hover:bg-white/60'
+                }`}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
         </Reveal>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Video Player Card */}
-          <div className="lg:col-span-6 flex justify-center">
-            <Reveal className="w-full max-w-md">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-navy border border-navy/10 group aspect-[9/16] max-h-[580px] mx-auto flex items-center justify-center">
-                <video
-                  ref={videoRef}
-                  src="/testimonial-video.mp4"
-                  playsInline
-                  preload="metadata"
-                  onEnded={handleVideoEnded}
-                  className="w-full h-full object-contain bg-black cursor-pointer"
-                  onClick={togglePlay}
-                />
-
-                {/* Overlay Play / Pause Button */}
-                {!isPlaying && (
-                  <div
-                    onClick={togglePlay}
-                    className="absolute inset-0 bg-navy/35 backdrop-blur-[2px] flex items-center justify-center cursor-pointer transition-all hover:bg-navy/20"
-                  >
-                    <div className="w-20 h-20 rounded-full bg-mint-400 text-navy flex items-center justify-center shadow-2xl transform group-hover:scale-105 transition-transform">
-                      <Play className="w-8 h-8 fill-navy ml-1" />
-                    </div>
-                  </div>
-                )}
-
-                {/* Bottom Video Controls Bar */}
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent p-4 flex items-center justify-between text-white transition-opacity">
-                  <button
-                    onClick={togglePlay}
-                    aria-label={isPlaying ? 'Pause video' : 'Play video'}
-                    className="p-2 rounded-full hover:bg-white/20 transition-colors"
-                  >
-                    {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 fill-white" />}
-                  </button>
-
-                  <div className="text-xs font-medium tracking-wide text-white/90">
-                    Client Testimonial
-                  </div>
-
-                  <button
-                    onClick={toggleMute}
-                    aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-                    className="p-2 rounded-full hover:bg-white/20 transition-colors"
-                  >
-                    {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-                  </button>
-                </div>
-              </div>
+          {/* Video Player Column */}
+          <div className="lg:col-span-6 flex flex-col items-center">
+            <Reveal className="w-full flex justify-center">
+              <VideoPlayerCard key={TESTIMONIALS[activeTab].id} item={TESTIMONIALS[activeTab]} />
             </Reveal>
+
+            {/* Video switcher dots / arrows */}
+            <div className="flex items-center gap-4 mt-5">
+              <button
+                onClick={() => setActiveTab((prev) => (prev === 0 ? TESTIMONIALS.length - 1 : prev - 1))}
+                aria-label="Previous testimonial"
+                className="p-2.5 rounded-full bg-ivory border border-navy/10 text-navy hover:bg-mint-50 hover:text-mint-700 transition-colors shadow-sm"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+
+              <div className="flex items-center gap-2">
+                {TESTIMONIALS.map((t, idx) => (
+                  <button
+                    key={t.id}
+                    onClick={() => setActiveTab(idx)}
+                    aria-label={`Go to ${t.label}`}
+                    className={`h-2.5 rounded-full transition-all ${
+                      activeTab === idx ? 'w-8 bg-mint-500' : 'w-2.5 bg-navy/20 hover:bg-navy/40'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={() => setActiveTab((prev) => (prev === TESTIMONIALS.length - 1 ? 0 : prev + 1))}
+                aria-label="Next testimonial"
+                className="p-2.5 rounded-full bg-ivory border border-navy/10 text-navy hover:bg-mint-50 hover:text-mint-700 transition-colors shadow-sm"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           {/* Testimonial Highlights & Context */}
@@ -116,7 +203,7 @@ export function TestimonialSection() {
                 </div>
 
                 <p className="text-navy/80 text-base leading-relaxed italic">
-                  Watch our client share their experience collaborating with FoodNova Consulting on custom recipe development, trial batches, sensory evaluation, and practical manufacturing handover.
+                  Watch our clients share their experience collaborating with FoodNova Consulting on custom recipe development, trial batches, sensory evaluation, and practical manufacturing handover.
                 </p>
               </div>
             </Reveal>
@@ -177,4 +264,3 @@ export function TestimonialSection() {
     </section>
   );
 }
-
